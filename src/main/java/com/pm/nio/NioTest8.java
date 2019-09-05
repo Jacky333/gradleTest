@@ -8,18 +8,18 @@ import java.nio.channels.FileChannel;
 /**
  * @author pengcheng
  * @version V1.0
- * @description
- * @date 2019/08/30 08:23
+ * @description directByteBuffer
+ * @date 2019/09/05 19:19
  */
-public class NioTest4 {
-    public static void main(String[] args) throws Exception {
-        FileInputStream fileInputStream = new FileInputStream("input.txt");
-        FileOutputStream fileOutputStream = new FileOutputStream("output.txt");
+public class NioTest8 {
+    public static void main(String[] args) throws Exception{
+        FileInputStream fileInputStream = new FileInputStream("input2.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream("output2.txt");
 
         FileChannel inputChannel = fileInputStream.getChannel();
         FileChannel outputChannel = fileOutputStream.getChannel();
 
-        ByteBuffer byteBuffer = ByteBuffer.allocate(512);
+        ByteBuffer byteBuffer = ByteBuffer.allocateDirect(512);
         long start = System.currentTimeMillis();
         while (true) {
             byteBuffer.clear();
